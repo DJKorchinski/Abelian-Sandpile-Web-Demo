@@ -1,16 +1,34 @@
+<html> 
 <head>
-
+<link rel = "stylesheet" href="main.css">
 </head>
 <body>
-<canvas id='can', width = '404', height = '404' style="border:1px solid #000000;">A simulation of the BTW sandpile model.</canvas><br />
-Frame: <span id='frameNoBox'>0</span> <br />
-Jump to Frame: <input type="number" id = 'frameInputBox' step='1'> <br />
-Frame Rate: 
-<input type="Button" id = 'frameRate0x' value = '||'>
-<input type="Button" id = 'frameRate1x' value = '1x'>
-<input type="Button" id = 'frameRate2x' value = '2x'>
-<input type="Button" id = 'frameRate5x' value = '5x'>
-<input type="Button" id = 'frameRate10x' value = '10x'>
-<input type="Button" id = 'frameRate100x' value = '100x'>
-<script src = 'main.js'></script>
+<div class='container'>
+<div class='simbox'>
+    <canvas id='can', width = '404', height = '404' style="border:1px solid #000000;">A simulation of the BTW sandpile model.</canvas><br />
+    Frame: <span id='frameNoBox'>0</span> <br />
+    Jump to Frame: <input type="number" id = 'frameInputBox' step='1'> <br />
+    Frame Rate: 
+    <input type="Button" id = 'frameRate0x' value = '||'>
+    <input type="Button" id = 'frameRate1x' value = '1x'>
+    <input type="Button" id = 'frameRate2x' value = '2x'>
+    <input type="Button" id = 'frameRate5x' value = '5x'>
+    <input type="Button" id = 'frameRate10x' value = '10x'>
+    <input type="Button" id = 'frameRate100x' value = '100x'>
+    <script src = 'main.js'></script>
+</div>
+
+<p> 
+    Instructions: <br /> 
+Pause the simulation with ||. Change the simulation speed hitting the 1x, 2x, 5x, 10x, or 100x buttons. Enter a frame number to jump to (large numbers, e.g. >1,000,000 may take a while to compute). The simulation is paused after a jump, so hit 1x to resume.
+</p>
+<p>
+    Details: <br /> 
+This is a simulation of the Bak-Tang-Weisenfeld (BTW) model. Conceived of as a model for sand near the angle of repose, each cell in the grid is coloured by how many grains of sand are at that location. Sand is added to the middle cell of the simulation. When there's more than four grains in a cell, that cell ``topples'', spilling its contents to its nearest neighbours. This can trigger those neighbours to topple, and so on, creating a cascading avalanche. These avalanches are scale-free, with a fractal dimension less than two. 
+</p>
+<p>
+This makes the BTW model one of the simplest examples of self-organized criticality, because the appearance of this scale-free behaviour is robust against many changes to the model details. Self-organization like this is postulated to explain the robust appearance of (scale-free) complexity in systems as diverse as earthquakes, wildfires, stock markets, etc. 
+</p>
+</div>
 </body>
+</html>
