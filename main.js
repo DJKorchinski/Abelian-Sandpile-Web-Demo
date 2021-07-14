@@ -20,7 +20,7 @@ function xy_to_ind(x,y) { return x+y*L; }
 
 function addToInd(ind){ grid[ind] +=1;  if(grid[ind] == 4) { nextUnstableSites.push(ind); }  }
 function addToXY(x,y){
-    if(x>=0 && x < L-1 && y>=0 && y < L-1) { 
+    if(x>=0 && x < L && y>=0 && y < L) { 
         ind = xy_to_ind(x,y);
         addToInd(ind);
     }  
