@@ -70,8 +70,9 @@ function draw() {
     for(var ind = 0; ind < Npix; ind++){
         // *4 b/c each pixel is rgba. +1 to get green component. 
         // imgData.data[ind * 4 + 1] = 32;
-        imgData.data[ind * 4 + 1] = (8-grid[imgDataMap[ind]])*16+64;
-        imgData.data[ind * 4 + 2] = +64 + 16*(8-grid[imgDataMap[ind]]);
+        imgData.data[ind * 4 + 0] =  192 - (grid[imgDataMap[ind]])*64;
+        imgData.data[ind * 4 + 1] =  192 - (grid[imgDataMap[ind]])*32;
+        imgData.data[ind * 4 + 2] = 256 - 16*(grid[imgDataMap[ind]]);
     }
     ctx.putImageData(imgData,0,0)
 }
